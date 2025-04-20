@@ -1,0 +1,46 @@
+@use "../../_variables" as variables;
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 variables.$spacing-200;
+  gap: variables.$spacing-200;
+  max-width: 33.75rem;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+  color: variables.$grey-500;
+
+  margin-top: variables.$spacing-300;
+
+  @media (min-width: 48rem) {
+    margin-top: variables.$spacing-400;
+  }
+
+  @media (min-width: 64rem) {
+    margin-top: variables.$spacing-500;
+  }
+
+  h1 {
+    @include variables.text-preset-2;
+  }
+
+  h2 {
+    @include variables.text-preset-1;
+  }
+
+  p {
+    @include variables.text-preset-4;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}

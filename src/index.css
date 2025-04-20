@@ -1,0 +1,22 @@
+@import './components/Cards/_card.scss';
+@import './components/Title/_title.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%; /* Use min-height instead of height to allow content to grow */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%; /* Allow content to grow beyond the viewport */
+}

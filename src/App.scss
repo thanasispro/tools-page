@@ -1,0 +1,11 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem; /* 60px = 3.75rem */ /* Default gap for mobile screens */
+  padding: 1rem; /* 16px = 1rem */ /* Optional padding for spacing */
+
+  /* Larger screens */
+  @media (min-width: 48rem) { /* 768px = 48rem */
+    gap: 4.5rem; /* 72px = 4.5rem */
+  }
+}
