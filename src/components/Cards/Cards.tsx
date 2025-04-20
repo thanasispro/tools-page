@@ -11,12 +11,19 @@ type CardProps = {
 };
 
 const Card = ({ title, description, icon }: CardProps) => {
+  const sanitizedTitle = title.replace(/\s+/g, "-").toLowerCase();
+
   return (
-    <article className="card" tabIndex={0} aria-labelledby={`${title}-title`} aria-describedby={`${title}-description`}>
+    <article
+      className="card"
+      tabIndex={0}
+      aria-labelledby={`${sanitizedTitle}-title`}
+      aria-describedby={`${sanitizedTitle}-description`}
+    >
       <div className="card-content">
         <div className="text">
-          <h3 id={`${title}-title`}>{title}</h3>
-          <p id={`${title}-description`}>{description}</p>
+          <h3 id={`${sanitizedTitle}-title`}>{title}</h3>
+          <p id={`${sanitizedTitle}-description`}>{description}</p>
         </div>
         <div className="icon">
           <img src={icon} alt={`Icon representing ${title}`} />
@@ -50,12 +57,12 @@ const cardsData = [
     icon: CalculatorIcon,
   },
 ];
-  
+
 const Cards = () => {
   return (
     <section className="card-container" aria-label="Feature Cards">
       {cardsData.map((card, index) => (
-         <Card
+        <Card
           key={index}
           title={card.title}
           description={card.description}
