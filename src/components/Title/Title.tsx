@@ -2,7 +2,7 @@ import './_title.scss';
 
 const Title = () => {
   return (
-    <header>
+    <header aria-label="Page Introduction">
       <div className="title-container">
         <h1>Reliable, efficient delivery</h1>
         <h2>Powered by Technology</h2>

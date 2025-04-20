@@ -12,17 +12,17 @@ type CardProps = {
 
 const Card = ({ title, description, icon }: CardProps) => {
   return (
-    <div className="card">
+    <article className="card" tabIndex={0} aria-labelledby={`${title}-title`} aria-describedby={`${title}-description`}>
       <div className="card-content">
         <div className="text">
-          <h3>{title}</h3>
-          <p>{description}</p>
+          <h3 id={`${title}-title`}>{title}</h3>
+          <p id={`${title}-description`}>{description}</p>
         </div>
         <div className="icon">
-          <img src={icon} alt={`${title} icon`} />
+          <img src={icon} alt={`Icon representing ${title}`} />
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
@@ -53,7 +53,7 @@ const cardsData = [
   
 const Cards = () => {
   return (
-    <section className="card-container">
+    <section className="card-container" aria-label="Feature Cards">
       {cardsData.map((card, index) => (
          <Card
           key={index}
